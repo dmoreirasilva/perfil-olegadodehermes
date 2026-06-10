@@ -3,227 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil Comportamental — @olegadodehermes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Perfil Comportamental — O Legado de Hermes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary:  #0A1628;
-      --bg:       #F8F6F1;
-      --surface:  #EDE8DF;
-      --accent:   #C9963D;
-      --text:     #0A1628;
-      --muted:    #6B7280;
-      --line:     #DDD8CF;
-      --white:    #FFFFFF;
-      --disc-D:   #DC2626;
-      --disc-I:   #F59E0B;
-      --disc-S:   #059669;
-      --disc-C:   #2563EB;
+      --navy:      #1C2140;
+      --gold:      #B8963E;
+      --gold-lt:   #D4B86A;
+      --purple:    #8B7AB5;
+      --purple-lt: #B5ABCF;
+      --marble:    #F7F5F1;
+      --cream:     #EDEBE3;
+      --line:      #DDD8CC;
+      --muted:     #6B6660;
+      --white:     #FFFFFF;
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: var(--marble);
+      color: var(--navy);
       -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(139,122,181,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 90%, rgba(184,150,62,0.06) 0%, transparent 55%);
     }
-    h1,h2,h3,h4 { font-family: 'Playfair Display', Georgia, serif; }
+    h1,h2,h3,h4 { font-family:'Cormorant Garamond',Georgia,serif; }
 
     /* HEADER */
     .site-header {
-      background: var(--primary);
-      padding: 20px 0 16px;
+      background: var(--navy);
+      padding: 18px 0;
+      border-bottom: 2px solid var(--gold);
     }
-    .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
     .header-row { display:flex; align-items:center; justify-content:space-between; }
-    .logo-text {
-      font-family:'Playfair Display',serif;
-      color:var(--accent); font-size:1rem; font-weight:600;
-    }
-    .logo-sub {
-      display:block; font-family:'Inter',sans-serif;
-      color:rgba(255,255,255,0.45); font-size:0.7rem; margin-top:2px;
-    }
-    .badge-header {
-      background:rgba(201,150,61,0.15); border:1px solid rgba(201,150,61,0.3);
-      color:var(--accent); font-size:0.72rem; padding:4px 12px;
-      border-radius:999px;
-    }
+    .logo { font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:1.1rem; font-weight:600; letter-spacing:0.5px; }
+    .logo span { display:block; font-family:'Inter',sans-serif; font-size:0.65rem; color:rgba(255,255,255,0.4); font-weight:400; letter-spacing:1.5px; text-transform:uppercase; margin-top:2px; }
+    .badge { background:rgba(184,150,62,0.15); border:1px solid rgba(184,150,62,0.3); color:var(--gold); font-size:0.68rem; letter-spacing:0.5px; padding:4px 12px; border-radius:999px; }
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0A1628 0%, #152540 100%);
-      padding: 52px 0 44px;
-      border-bottom: 3px solid var(--accent);
+      background: var(--navy);
+      padding: 56px 0 48px;
+      border-bottom: 2px solid var(--gold);
+      position: relative;
+      overflow: hidden;
     }
-    .hero-label {
+    .hero::before {
+      content:'';
+      position:absolute; inset:0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(139,122,181,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 10% 80%, rgba(184,150,62,0.08) 0%, transparent 50%);
+      pointer-events:none;
+    }
+    .hero-tag {
       display:inline-flex; align-items:center; gap:8px;
-      background:rgba(201,150,61,0.12); border:1px solid rgba(201,150,61,0.25);
+      border:1px solid rgba(184,150,62,0.3);
       padding:4px 14px; border-radius:999px;
-      font-size:0.72rem; color:var(--accent); margin-bottom:20px;
+      font-size:0.68rem; color:var(--gold);
+      letter-spacing:1.5px; text-transform:uppercase;
+      margin-bottom:22px;
     }
-    .hero-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; }
-    .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); color:#fff; line-height:1.2; margin-bottom:10px; }
-    .hero h1 em { color:var(--accent); font-style:normal; }
-    .hero-sub { color:rgba(255,255,255,0.55); font-size:0.9rem; margin-bottom:28px; }
-    .hero-stats {
-      display:flex; gap:24px; flex-wrap:wrap;
-      border-top:1px solid rgba(255,255,255,0.1); padding-top:22px;
-    }
-    .hero-stat { color:rgba(255,255,255,0.6); font-size:0.8rem; }
-    .hero-stat strong { color:#fff; display:block; font-size:1.1rem; }
+    .hero-dot { width:5px; height:5px; background:var(--gold); border-radius:50%; }
+    .hero h1 { font-size:clamp(2rem,6vw,3.2rem); color:#fff; line-height:1.1; margin-bottom:8px; font-style:italic; font-weight:600; }
+    .hero h1 em { color:var(--gold); font-style:normal; }
+    .hero-sub { color:rgba(255,255,255,0.45); font-size:0.85rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:28px; }
+    .hero-divider { width:48px; height:1px; background:linear-gradient(90deg,var(--gold),transparent); margin-bottom:18px; }
+    .hero-date { color:rgba(255,255,255,0.3); font-size:0.75rem; letter-spacing:1px; }
 
     /* DISCLAIMER */
     .disclaimer {
-      background:#fff3cd; border:1px solid #ffc107; border-radius:8px;
-      padding:12px 16px; font-size:0.78rem; color:#6b4c00;
-      margin:24px 0; display:flex; gap:10px; align-items:flex-start;
+      background:rgba(139,122,181,0.08); border:1px solid rgba(139,122,181,0.25);
+      border-radius:8px; padding:12px 16px; font-size:0.78rem; color:var(--muted);
+      margin:28px 0 8px; display:flex; gap:10px; line-height:1.6;
     }
-    .disclaimer strong { display:block; margin-bottom:2px; }
 
     /* MAIN */
-    .main { padding: 40px 0 80px; }
+    .main { padding:24px 0 80px; }
+
+    /* SECTION LABEL */
+    .section-label {
+      display:flex; align-items:center; gap:10px;
+      font-size:0.65rem; font-weight:600; letter-spacing:2px;
+      text-transform:uppercase; color:var(--gold);
+      margin:32px 0 12px;
+    }
+    .section-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent); }
 
     /* CARDS */
     .r-card {
       background:var(--white); border:1px solid var(--line);
-      border-radius:12px; padding:24px; margin-bottom:20px;
+      border-radius:12px; padding:24px; margin-bottom:16px;
+      position:relative; overflow:hidden;
     }
-    .r-card-head {
-      display:flex; align-items:flex-start; gap:14px; margin-bottom:20px;
+    .r-card::before {
+      content:''; position:absolute; top:0; left:0;
+      width:3px; height:100%;
+      background:linear-gradient(180deg,var(--gold),var(--purple));
     }
+    .r-card-head { display:flex; align-items:flex-start; gap:14px; margin-bottom:20px; }
     .r-icon {
-      width:40px; height:40px; background:var(--surface);
+      width:40px; height:40px; background:var(--cream);
       border-radius:10px; display:flex; align-items:center; justify-content:center;
-      font-size:1.3rem; flex-shrink:0;
+      font-size:1.2rem; flex-shrink:0; border:1px solid var(--line);
     }
-    .r-title { font-size:1rem; font-weight:600; }
-    .r-sub { font-size:0.75rem; color:var(--muted); margin-top:2px; }
+    .r-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--navy); }
+    .r-sub   { font-size:0.72rem; color:var(--muted); margin-top:2px; }
     .r-tag {
-      margin-left:auto; background:var(--surface); border:1px solid var(--line);
-      color:var(--accent); font-size:0.72rem; font-weight:600;
-      padding:4px 12px; border-radius:999px; white-space:nowrap;
+      margin-left:auto; background:rgba(184,150,62,0.1); border:1px solid rgba(184,150,62,0.3);
+      color:var(--gold); font-size:0.72rem; font-weight:600; padding:4px 12px;
+      border-radius:999px; white-space:nowrap;
     }
 
-    /* DISC SCORES */
+    /* DISC */
     .score-row { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
     .score-item { display:grid; grid-template-columns:28px 1fr 36px; align-items:center; gap:10px; }
     .s-label { font-size:0.8rem; font-weight:700; }
-    .s-track { height:8px; background:var(--surface); border-radius:4px; overflow:hidden; }
-    .s-fill  { height:100%; border-radius:4px; transition:width .6s ease; }
-    .s-pct   { font-size:0.75rem; color:var(--muted); text-align:right; }
-
+    .s-track { height:7px; background:var(--cream); border-radius:4px; overflow:hidden; }
+    .s-fill  { height:100%; border-radius:4px; }
+    .s-pct   { font-size:0.72rem; color:var(--muted); text-align:right; }
     .profile-box {
-      background:var(--surface); border-radius:8px; padding:14px 16px;
-      font-size:0.82rem; line-height:1.65;
+      background:var(--cream); border-radius:8px; padding:14px 16px;
+      font-size:0.82rem; line-height:1.7; color:var(--navy);
+      border-left:3px solid var(--gold);
     }
-    .profile-box strong { display:block; margin-bottom:4px; color:var(--primary); }
+    .profile-box strong { display:block; margin-bottom:5px; font-family:'Cormorant Garamond',serif; font-size:1rem; }
 
     /* JUNG */
-    .jung-type {
-      font-family:'Playfair Display',serif;
-      font-size:3rem; font-weight:600; color:var(--accent);
-      text-align:center; padding:16px 0 8px;
-    }
-    .jung-desc {
-      text-align:center; color:var(--muted); font-size:0.85rem;
-      line-height:1.7; margin-bottom:20px; padding:0 12px;
-    }
+    .ornament { text-align:center; color:rgba(184,150,62,0.35); font-size:1rem; margin:4px 0; letter-spacing:8px; }
+    .jung-type { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:700; color:var(--gold); text-align:center; padding:12px 0 4px; letter-spacing:6px; }
+    .jung-name { text-align:center; font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--purple); margin-bottom:10px; }
+    .jung-desc { text-align:center; color:var(--muted); font-size:0.82rem; line-height:1.75; margin-bottom:20px; padding:0 8px; }
     .jung-dims { display:flex; flex-direction:column; gap:8px; }
-    .jung-dim {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:8px 12px; background:var(--surface); border-radius:6px;
-      font-size:0.8rem;
-    }
+    .jung-dim { display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background:var(--cream); border-radius:6px; font-size:0.8rem; }
     .jung-dim-lbl { color:var(--muted); }
-    .jung-dim-val { font-weight:600; color:var(--primary); }
+    .jung-dim-val { font-weight:600; color:var(--navy); }
 
     /* SPRANGER */
-    .sp-list { display:flex; flex-direction:column; gap:8px; }
-    .sp-item { display:grid; grid-template-columns:24px 1fr 1fr 40px; align-items:center; gap:10px; }
-    .sp-rank { font-size:0.72rem; color:var(--muted); font-weight:600; }
-    .sp-name { font-size:0.82rem; font-weight:500; }
-    .sp-track { height:6px; background:var(--surface); border-radius:3px; overflow:hidden; }
-    .sp-fill  { height:100%; background:var(--accent); border-radius:3px; }
-    .sp-score { font-size:0.72rem; color:var(--muted); text-align:right; }
+    .sp-list { display:flex; flex-direction:column; gap:9px; }
+    .sp-item { display:grid; grid-template-columns:22px 1fr 1fr 40px; align-items:center; gap:10px; }
+    .sp-rank { font-size:0.7rem; color:var(--muted); font-weight:600; }
+    .sp-name { font-size:0.82rem; font-weight:500; color:var(--navy); }
+    .sp-track { height:6px; background:var(--cream); border-radius:3px; overflow:hidden; }
+    .sp-fill  { height:100%; border-radius:3px; background:linear-gradient(90deg,var(--gold),var(--purple)); }
+    .sp-score { font-size:0.7rem; color:var(--muted); text-align:right; }
 
-    /* ANXIETY */
-    .anx-center { text-align:center; padding:20px 0 10px; }
-    .anx-num { font-size:3rem; font-weight:700; font-family:'Playfair Display',serif; }
-    .anx-lbl { font-size:0.85rem; color:var(--muted); margin-top:4px; }
-    .anx-bar-track { height:10px; background:var(--surface); border-radius:5px; overflow:hidden; margin:14px 0; }
-    .anx-bar-fill  { height:100%; border-radius:5px; transition:width .8s ease; }
-    .anx-desc { font-size:0.82rem; color:var(--muted); line-height:1.7; }
+    /* LIDERANÇA */
+    .lid-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:14px; }
+    .lid-box { background:var(--cream); border-radius:8px; padding:12px 14px; text-align:center; }
+    .lid-box.active { background:rgba(184,150,62,0.1); border:1px solid rgba(184,150,62,0.35); }
+    .lid-pct { font-size:1.4rem; font-weight:700; font-family:'Cormorant Garamond',serif; color:var(--gold); }
+    .lid-lbl { font-size:0.72rem; color:var(--muted); margin-top:2px; }
+
+    /* DOR */
+    .anx-center { text-align:center; padding:16px 0 8px; }
+    .anx-num { font-size:3rem; font-weight:700; font-family:'Cormorant Garamond',serif; color:var(--purple); }
+    .anx-lbl { font-size:0.82rem; color:var(--muted); margin-top:4px; }
+    .anx-bar-track { height:8px; background:var(--cream); border-radius:4px; overflow:hidden; margin:14px 0; }
+    .anx-bar-fill  { height:100%; border-radius:4px; background:linear-gradient(90deg,var(--purple),var(--purple-lt)); }
+    .anx-desc { font-size:0.82rem; color:var(--muted); line-height:1.75; }
 
     /* BELIEFS */
-    .beliefs-grid {
-      display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-      gap:12px; margin-bottom:14px;
-    }
-    .belief-box {
-      background:var(--surface); border-radius:8px; padding:16px;
-      text-align:center;
-    }
-    .belief-num {
-      font-size:1.8rem; font-weight:700; color:var(--accent);
-      font-family:'Playfair Display',serif;
-    }
+    .beliefs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; margin-bottom:14px; }
+    .belief-box { background:var(--cream); border-radius:8px; padding:16px; text-align:center; }
+    .belief-num { font-size:1.9rem; font-weight:700; color:var(--gold); font-family:'Cormorant Garamond',serif; }
     .belief-max { font-size:0.9rem; color:var(--muted); }
-    .belief-lbl { font-size:0.72rem; color:var(--muted); margin-top:4px; line-height:1.4; }
+    .belief-lbl { font-size:0.7rem; color:var(--muted); margin-top:4px; line-height:1.4; }
     .belief-warning {
-      background:#fff3cd; border:1px solid #ffc10740;
-      border-radius:8px; padding:12px 14px;
-      font-size:0.8rem; color:#6b4c00; line-height:1.6;
+      background:rgba(139,122,181,0.08); border:1px solid rgba(139,122,181,0.25);
+      border-radius:8px; padding:12px 14px; font-size:0.8rem; color:var(--navy); line-height:1.65;
     }
 
     /* INSIGHTS */
-    .insights-grid {
-      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    .insights-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media(max-width:500px){ .insights-grid{ grid-template-columns:1fr; } }
+    .insight-box { background:var(--cream); border-radius:8px; padding:14px 16px; }
+    .insight-box h4 { font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--gold); margin-bottom:7px; }
+    .insight-box p { font-size:0.8rem; color:var(--muted); line-height:1.65; }
+
+    /* BIO */
+    .bio-quote {
+      background:var(--navy); border-radius:8px; padding:16px 18px;
+      font-size:0.85rem; color:rgba(255,255,255,0.75); line-height:1.8;
+      font-style:italic; margin-bottom:16px; border-left:3px solid var(--gold);
     }
-    @media(max-width:500px){ .insights-grid { grid-template-columns:1fr; } }
-    .insight-box {
-      background:var(--surface); border-radius:8px; padding:14px 16px;
-    }
-    .insight-box h4 {
-      font-family:'Inter',sans-serif; font-size:0.78rem;
-      font-weight:700; margin-bottom:6px;
-      text-transform:uppercase; letter-spacing:0.4px; color:var(--accent);
-    }
-    .insight-box p { font-size:0.8rem; color:var(--muted); line-height:1.6; }
+    .bio-analysis p { font-size:0.82rem; color:var(--muted); line-height:1.7; margin-bottom:12px; }
+    .bio-analysis p strong { color:var(--navy); font-style:normal; }
 
     /* CTA */
     .cta-card {
-      background:var(--primary); border-radius:16px;
-      padding:36px 28px; text-align:center; margin-top:24px;
+      background:linear-gradient(135deg,var(--navy) 0%,#252952 100%);
+      border-radius:16px; padding:40px 28px; text-align:center;
+      margin-top:24px; border:1px solid rgba(184,150,62,0.25);
+      position:relative; overflow:hidden;
     }
-    .cta-card .cta-eyebrow {
-      font-size:0.72rem; color:var(--accent); letter-spacing:1px;
-      text-transform:uppercase; margin-bottom:12px;
+    .cta-card::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at 50% 0%,rgba(139,122,181,0.2) 0%,transparent 60%);
+      pointer-events:none;
     }
-    .cta-card h2 {
-      color:#fff; font-size:1.6rem; line-height:1.3; margin-bottom:14px;
-    }
-    .cta-card h2 em { color:var(--accent); font-style:normal; }
-    .cta-card p { color:rgba(255,255,255,0.55); font-size:0.85rem; line-height:1.7; margin-bottom:24px; }
-    .btn-accent {
+    .cta-card .eyebrow { font-size:0.65rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+    .cta-card h2 { color:#fff; font-size:clamp(1.5rem,4vw,2rem); line-height:1.25; margin-bottom:14px; }
+    .cta-card h2 em { color:var(--gold); font-style:italic; }
+    .cta-card p { color:rgba(255,255,255,0.45); font-size:0.82rem; line-height:1.7; margin-bottom:24px; }
+    .btn-gold {
       display:inline-flex; align-items:center; gap:8px;
-      background:var(--accent); color:#fff; font-size:0.85rem;
-      font-weight:600; padding:12px 24px; border-radius:8px;
-      text-decoration:none; border:none; cursor:pointer;
-    }
-
-    /* SECTION DIVIDER */
-    .section-label {
-      font-size:0.7rem; font-weight:700; letter-spacing:1.5px;
-      text-transform:uppercase; color:var(--muted);
-      margin:32px 0 14px; padding-bottom:8px;
-      border-bottom:1px solid var(--line);
-    }
-
-    /* PRINT */
-    @media print {
-      .site-header { position:static; }
-      .r-card { break-inside:avoid; }
+      background:linear-gradient(135deg,var(--gold),var(--gold-lt));
+      color:var(--navy); font-size:0.82rem; font-weight:700;
+      padding:12px 28px; border-radius:8px; cursor:pointer; border:none; letter-spacing:0.5px;
     }
   </style>
 </head>
@@ -232,26 +220,19 @@
 <header class="site-header">
   <div class="container">
     <div class="header-row">
-      <div class="logo-text">
-        Instituto Diego Moreira
-        <span class="logo-sub">Método RESET da Ansiedade</span>
-      </div>
-      <div class="badge-header">Análise de Perfil</div>
+      <div class="logo">O Legado de Hermes<span>Análise de Perfil Comportamental</span></div>
+      <div class="badge">Perfil Inferido</div>
     </div>
   </div>
 </header>
 
 <div class="hero">
   <div class="container">
-    <div class="hero-label"><span class="hero-dot"></span> Perfil Comportamental Inferido</div>
-    <h1>@olegadodehermes<br><em>Legado de Hermes</em></h1>
-    <div class="hero-sub">Hipnoterapia · Alquimia · Espiritualidade — Diego & Aline</div>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>169</strong>Seguidores</div>
-      <div class="hero-stat"><strong>31</strong>Publicações</div>
-      <div class="hero-stat"><strong>144</strong>Seguindo</div>
-      <div class="hero-stat"><strong>10/jun/2026</strong>Data da análise</div>
-    </div>
+    <div class="hero-tag"><span class="hero-dot"></span>Análise de Marca &amp; Comportamento</div>
+    <h1>O Legado de<br><em>Hermes</em></h1>
+    <p class="hero-sub">Hipnoterapia · Alquimia · Espiritualidade</p>
+    <div class="hero-divider"></div>
+    <p class="hero-date">Análise realizada em 10 de junho de 2026</p>
   </div>
 </div>
 
@@ -259,181 +240,119 @@
   <div class="container">
 
     <div class="disclaimer">
-      <span>⚠️</span>
-      <div>
-        <strong>Perfil inferido por análise de presença digital</strong>
-        Baseado em bio, posicionamento de marca e niche do Instagram. Não é resultado de questionário respondido. Use como referência estratégica, não como diagnóstico definitivo.
-      </div>
+      <span>◈</span>
+      <span>Perfil inferido por análise de presença digital e posicionamento de marca. Não é resultado de questionário respondido — use como referência estratégica.</span>
     </div>
 
-    <!-- DISC -->
+    <!-- 01 DISC -->
     <div class="section-label">01 — Perfil DISC</div>
     <div class="r-card">
       <div class="r-card-head">
-        <div class="r-icon">🎯</div>
+        <div class="r-icon">⚡</div>
         <div><div class="r-title">Perfil DISC</div><div class="r-sub">Comportamento natural — Marston (1928)</div></div>
-        <div class="r-tag">Perfil I/S</div>
+        <div class="r-tag">I / S dominante</div>
       </div>
       <div class="score-row">
         <div class="score-item">
-          <div class="s-label" style="color:var(--disc-D)">D</div>
-          <div class="s-track"><div class="s-fill" style="width:12%;background:var(--disc-D)"></div></div>
+          <div class="s-label" style="color:#C0392B">D</div>
+          <div class="s-track"><div class="s-fill" style="width:12%;background:#C0392B"></div></div>
           <div class="s-pct">12%</div>
         </div>
         <div class="score-item">
-          <div class="s-label" style="color:var(--disc-I)">I</div>
-          <div class="s-track"><div class="s-fill" style="width:48%;background:var(--disc-I)"></div></div>
+          <div class="s-label" style="color:var(--gold)">I</div>
+          <div class="s-track"><div class="s-fill" style="width:48%;background:var(--gold)"></div></div>
           <div class="s-pct">48%</div>
         </div>
         <div class="score-item">
-          <div class="s-label" style="color:var(--disc-S)">S</div>
-          <div class="s-track"><div class="s-fill" style="width:32%;background:var(--disc-S)"></div></div>
+          <div class="s-label" style="color:#27AE60">S</div>
+          <div class="s-track"><div class="s-fill" style="width:32%;background:#27AE60"></div></div>
           <div class="s-pct">32%</div>
         </div>
         <div class="score-item">
-          <div class="s-label" style="color:var(--disc-C)">C</div>
-          <div class="s-track"><div class="s-fill" style="width:8%;background:var(--disc-C)"></div></div>
+          <div class="s-label" style="color:var(--purple)">C</div>
+          <div class="s-track"><div class="s-fill" style="width:8%;background:var(--purple)"></div></div>
           <div class="s-pct">8%</div>
         </div>
       </div>
       <div class="profile-box">
         <strong>Perfil primário: I — Influenciador Espiritual</strong>
-        Comunicação inspiracional, apelo emocional e transformacional. O nome "Hermes" já sinaliza a arquétipo do mensageiro e guia — alto carisma perceptivo, capacidade de criar narrativas de transformação e facilidade para atrair seguidores por identificação. O secundário S (Estabilidade) aparece no "Acompanhamento Exclusivo" — paciência, vínculo, presença duradoura com o cliente. Baixo D confirma ausência de postura agressiva de vendas; baixo C indica navegação por intuição mais que por sistemas.
+        Comunicação inspiracional, apelo emocional e transformacional. O nome "Hermes" sinaliza o arquétipo do mensageiro e guia — alto carisma, capacidade de criar narrativas de transformação e facilidade para atrair seguidores por identificação. O secundário S (Estabilidade) aparece no "Acompanhamento Exclusivo" — paciência, vínculo, presença duradoura. Baixo D confirma ausência de postura agressiva; baixo C indica navegação por intuição mais que por sistemas.
       </div>
     </div>
 
-    <!-- JUNG -->
+    <!-- 02 JUNG -->
     <div class="section-label">02 — Tipo Psicológico</div>
     <div class="r-card">
       <div class="r-card-head">
-        <div class="r-icon">🧠</div>
-        <div><div class="r-title">Tipo Psicológico</div><div class="r-sub">Jung — 16 tipos</div></div>
-        <div class="r-tag">INFJ</div>
+        <div class="r-icon">🌀</div>
+        <div><div class="r-title">Tipo Psicológico</div><div class="r-sub">Jung — 16 tipos psicológicos</div></div>
       </div>
+      <div class="ornament">— ◈ —</div>
       <div class="jung-type">INFJ</div>
-      <p class="jung-desc">O Visionário — Idealista com visão de longo prazo. Principista, decisivo e apaixonado por causar impacto significativo em pessoas. O tipo mais raro — e o arquétipo natural do guia espiritual, do terapeuta e do transformador de vidas.</p>
+      <div class="jung-name">O Visionário</div>
+      <p class="jung-desc">Idealista com visão de longo prazo. Principista, decisivo e apaixonado por causar impacto significativo em pessoas. O tipo mais raro — e o arquétipo natural do guia espiritual, do terapeuta e do transmutador de vidas. Movido por propósito, não por lucro.</p>
       <div class="jung-dims">
-        <div class="jung-dim">
-          <span class="jung-dim-lbl">Extroversão / Introversão</span>
-          <span class="jung-dim-val">I — Introvertido (3/4)</span>
-        </div>
-        <div class="jung-dim">
-          <span class="jung-dim-lbl">Sensação / Intuição</span>
-          <span class="jung-dim-val">N — Intuição (4/4)</span>
-        </div>
-        <div class="jung-dim">
-          <span class="jung-dim-lbl">Pensamento / Sentimento</span>
-          <span class="jung-dim-val">F — Sentimento (3/4)</span>
-        </div>
-        <div class="jung-dim">
-          <span class="jung-dim-lbl">Julgamento / Percepção</span>
-          <span class="jung-dim-val">J — Julgamento (3/4)</span>
-        </div>
+        <div class="jung-dim"><span class="jung-dim-lbl">Extroversão / Introversão</span><span class="jung-dim-val">Introvertido (I)</span></div>
+        <div class="jung-dim"><span class="jung-dim-lbl">Sensação / Intuição</span><span class="jung-dim-val">Intuição (N) — forte</span></div>
+        <div class="jung-dim"><span class="jung-dim-lbl">Pensamento / Sentimento</span><span class="jung-dim-val">Sentimento (F)</span></div>
+        <div class="jung-dim"><span class="jung-dim-lbl">Julgamento / Percepção</span><span class="jung-dim-val">Julgamento (J)</span></div>
       </div>
     </div>
 
-    <!-- SPRANGER -->
+    <!-- 03 SPRANGER -->
     <div class="section-label">03 — Hierarquia de Valores</div>
     <div class="r-card">
       <div class="r-card-head">
         <div class="r-icon">⚖️</div>
-        <div><div class="r-title">Hierarquia de Valores</div><div class="r-sub">Spranger — o que realmente move essa marca</div></div>
+        <div><div class="r-title">Hierarquia de Valores</div><div class="r-sub">Spranger — o que move esta marca</div></div>
       </div>
       <div class="sp-list">
-        <div class="sp-item">
-          <div class="sp-rank">1°</div>
-          <div class="sp-name">Espiritual / Transcendente</div>
-          <div class="sp-track"><div class="sp-fill" style="width:95%"></div></div>
-          <div class="sp-score">9,5/10</div>
-        </div>
-        <div class="sp-item">
-          <div class="sp-rank">2°</div>
-          <div class="sp-name">Social</div>
-          <div class="sp-track"><div class="sp-fill" style="width:80%"></div></div>
-          <div class="sp-score">8/10</div>
-        </div>
-        <div class="sp-item">
-          <div class="sp-rank">3°</div>
-          <div class="sp-name">Estético</div>
-          <div class="sp-track"><div class="sp-fill" style="width:70%"></div></div>
-          <div class="sp-score">7/10</div>
-        </div>
-        <div class="sp-item">
-          <div class="sp-rank">4°</div>
-          <div class="sp-name">Teórico</div>
-          <div class="sp-track"><div class="sp-fill" style="width:50%"></div></div>
-          <div class="sp-score">5/10</div>
-        </div>
-        <div class="sp-item">
-          <div class="sp-rank">5°</div>
-          <div class="sp-name">Econômico</div>
-          <div class="sp-track"><div class="sp-fill" style="width:30%"></div></div>
-          <div class="sp-score">3/10</div>
-        </div>
-        <div class="sp-item">
-          <div class="sp-rank">6°</div>
-          <div class="sp-name">Político / Poder</div>
-          <div class="sp-track"><div class="sp-fill" style="width:15%"></div></div>
-          <div class="sp-score">1,5/10</div>
-        </div>
+        <div class="sp-item"><div class="sp-rank">1°</div><div class="sp-name">Espiritual / Transcendente</div><div class="sp-track"><div class="sp-fill" style="width:95%"></div></div><div class="sp-score">9,5</div></div>
+        <div class="sp-item"><div class="sp-rank">2°</div><div class="sp-name">Social / Serviço</div><div class="sp-track"><div class="sp-fill" style="width:80%"></div></div><div class="sp-score">8,0</div></div>
+        <div class="sp-item"><div class="sp-rank">3°</div><div class="sp-name">Estético / Simbólico</div><div class="sp-track"><div class="sp-fill" style="width:70%"></div></div><div class="sp-score">7,0</div></div>
+        <div class="sp-item"><div class="sp-rank">4°</div><div class="sp-name">Teórico / Conhecimento</div><div class="sp-track"><div class="sp-fill" style="width:50%"></div></div><div class="sp-score">5,0</div></div>
+        <div class="sp-item"><div class="sp-rank">5°</div><div class="sp-name">Econômico / Resultado</div><div class="sp-track"><div class="sp-fill" style="width:30%"></div></div><div class="sp-score">3,0</div></div>
+        <div class="sp-item"><div class="sp-rank">6°</div><div class="sp-name">Político / Poder</div><div class="sp-track"><div class="sp-fill" style="width:15%"></div></div><div class="sp-score">1,5</div></div>
       </div>
     </div>
 
-    <!-- LIDERANÇA -->
+    <!-- 04 LIDERANÇA -->
     <div class="section-label">04 — Estilo de Liderança</div>
     <div class="r-card">
       <div class="r-card-head">
-        <div class="r-icon">🎓</div>
-        <div><div class="r-title">Estilo de Liderança</div><div class="r-sub">Hersey & Blanchard — Liderança Situacional</div></div>
+        <div class="r-icon">🏛️</div>
+        <div><div class="r-title">Estilo de Liderança</div><div class="r-sub">Hersey &amp; Blanchard — Liderança Situacional</div></div>
         <div class="r-tag">Treinador (Coach)</div>
       </div>
-      <div class="score-row" style="margin-bottom:16px;">
-        <div class="score-item">
-          <div class="s-label" style="font-size:0.7rem;color:var(--muted)">Diretivo</div>
-          <div class="s-track"><div class="s-fill" style="width:10%;background:var(--accent)"></div></div>
-          <div class="s-pct">10%</div>
-        </div>
-        <div class="score-item">
-          <div class="s-label" style="font-size:0.7rem;color:var(--muted)">Treinador</div>
-          <div class="s-track"><div class="s-fill" style="width:55%;background:var(--accent)"></div></div>
-          <div class="s-pct">55%</div>
-        </div>
-        <div class="score-item">
-          <div class="s-label" style="font-size:0.7rem;color:var(--muted)">Apoiador</div>
-          <div class="s-track"><div class="s-fill" style="width:30%;background:var(--accent)"></div></div>
-          <div class="s-pct">30%</div>
-        </div>
-        <div class="score-item">
-          <div class="s-label" style="font-size:0.7rem;color:var(--muted)">Delegador</div>
-          <div class="s-track"><div class="s-fill" style="width:5%;background:var(--accent)"></div></div>
-          <div class="s-pct">5%</div>
-        </div>
+      <div class="lid-grid">
+        <div class="lid-box"><div class="lid-pct">10%</div><div class="lid-lbl">Diretivo</div></div>
+        <div class="lid-box active"><div class="lid-pct">55%</div><div class="lid-lbl">Treinador (Coach)</div></div>
+        <div class="lid-box"><div class="lid-pct">30%</div><div class="lid-lbl">Apoiador</div></div>
+        <div class="lid-box"><div class="lid-pct">5%</div><div class="lid-lbl">Delegador</div></div>
       </div>
       <div class="profile-box">
-        <strong>🎓 Treinador (Coach)</strong>
-        Desenvolve pessoas, orienta e acompanha a jornada individual. A palavra "Acompanhamento Exclusivo" é a assinatura desse estilo — presença contínua, feedback, suporte emocional. Forte em crescimento pessoal profundo e formação de novos padrões de identidade. O elemento "Alquimia" no posicionamento reforça a metáfora da transmutação guiada — levar o cliente do chumbo (dor) ao ouro (nova versão).
+        <strong>🏛️ O Guia que Acompanha a Transmutação</strong>
+        "Acompanhamento Exclusivo" é a assinatura desse estilo — presença contínua, feedback, suporte emocional. O elemento "Alquimia" reforça a metáfora da transmutação guiada: levar o cliente do chumbo (dor/limitação) ao ouro (nova versão). Não lidera pela autoridade, mas pela proximidade e pela visão.
       </div>
     </div>
 
-    <!-- ANSIEDADE / POSICIONAMENTO DE DOR -->
-    <div class="section-label">05 — Mapa de Dor e Posicionamento</div>
+    <!-- 05 DOR -->
+    <div class="section-label">05 — Mapa de Dor do Público</div>
     <div class="r-card">
       <div class="r-card-head">
-        <div class="r-icon">🔥</div>
-        <div><div class="r-title">Mapa de Dor do Público</div><div class="r-sub">Nível de urgência percebido pelo nicho atendido</div></div>
-        <div class="r-tag" style="color:#D97706;background:#D9770618;border-color:#D9770640">Moderada–Significativa</div>
+        <div class="r-icon">🔮</div>
+        <div><div class="r-title">Mapa de Dor</div><div class="r-sub">Intensidade da dor trabalhada pelo nicho</div></div>
+        <div class="r-tag" style="color:var(--purple);background:rgba(139,122,181,0.1);border-color:rgba(139,122,181,0.3)">Moderada–Significativa</div>
       </div>
       <div class="anx-center">
-        <div class="anx-num" style="color:#D97706">62%</div>
-        <div class="anx-lbl">Intensidade da dor trabalhada: <strong>Moderada–Significativa</strong></div>
+        <div class="anx-num">62%</div>
+        <div class="anx-lbl">Intensidade — <strong>Dor Existencial / Crise de Sentido</strong></div>
       </div>
-      <div class="anx-bar-track">
-        <div class="anx-bar-fill" style="width:62%;background:#D97706"></div>
-      </div>
-      <p class="anx-desc">O público atraído por "Hipnoterapia + Alquimia + Espiritualidade" geralmente vive uma crise de identidade ou de sentido — não necessariamente ansiedade clínica grave, mas um desconforto profundo com quem está sendo versus quem deseja ser. A dor é de natureza existencial. "O caminho para sua nova versão" confirma esse posicionamento: o cliente já sente que precisa mudar, mas ainda não sabe como. Isso é dor moderada-significativa com alta predisposição para a transformação.</p>
+      <div class="anx-bar-track"><div class="anx-bar-fill" style="width:62%"></div></div>
+      <p class="anx-desc">O público atraído por "Hipnoterapia + Alquimia + Espiritualidade" geralmente vive uma crise de identidade ou de sentido — não ansiedade clínica grave, mas um desconforto profundo com quem está sendo versus quem deseja ser. A dor é de natureza existencial. "O caminho para sua nova versão começa agora" confirma: o cliente já sente que precisa mudar, mas ainda não sabe como. Alta predisposição para a transformação.</p>
     </div>
 
-    <!-- CRENÇAS E IDENTIDADE DE MARCA -->
+    <!-- 06 CRENÇAS -->
     <div class="section-label">06 — Crenças e Identidade de Marca</div>
     <div class="r-card">
       <div class="r-card-head">
@@ -441,84 +360,70 @@
         <div><div class="r-title">Crenças e Identidade</div><div class="r-sub">Autoliderança e posicionamento simbólico</div></div>
       </div>
       <div class="beliefs-grid">
-        <div class="belief-box">
-          <div class="belief-num">8<span class="belief-max">/10</span></div>
-          <div class="belief-lbl">Identidade de Marca</div>
-        </div>
-        <div class="belief-box">
-          <div class="belief-num">7<span class="belief-max">/10</span></div>
-          <div class="belief-lbl">Crença no Método</div>
-        </div>
-        <div class="belief-box">
-          <div class="belief-num">5<span class="belief-max">/10</span></div>
-          <div class="belief-lbl">Prova Social / Autoridade</div>
-        </div>
-        <div class="belief-box">
-          <div class="belief-num">4<span class="belief-max">/10</span></div>
-          <div class="belief-lbl">Mentalidade de Escala</div>
-        </div>
+        <div class="belief-box"><div class="belief-num">8<span class="belief-max">/10</span></div><div class="belief-lbl">Identidade de Marca</div></div>
+        <div class="belief-box"><div class="belief-num">7<span class="belief-max">/10</span></div><div class="belief-lbl">Crença no Método</div></div>
+        <div class="belief-box"><div class="belief-num">5<span class="belief-max">/10</span></div><div class="belief-lbl">Prova Social</div></div>
+        <div class="belief-box"><div class="belief-num">4<span class="belief-max">/10</span></div><div class="belief-lbl">Mentalidade de Escala</div></div>
       </div>
-      <div class="belief-warning">⚠️ <strong>Prova Social é o gap principal (5/10).</strong> 169 seguidores e nenhum depoimento visível na bio indicam que a marca ainda não construiu evidência pública de resultado. Quem atende nicho espiritual precisa de transformações comprovadas para vencer a objeção do ceticismo.</div>
+      <div class="belief-warning">◈ <strong>Prova Social é o gap principal (5/10).</strong> A marca possui identidade forte e propósito claro — mas ainda não construiu evidência pública de resultado. Quem atende nicho espiritual precisa de histórias de transformação comprovadas para vencer a objeção do ceticismo.</div>
     </div>
 
-    <!-- ANÁLISE ESTRATÉGICA -->
+    <!-- 07 ESTRATÉGIA -->
     <div class="section-label">07 — Análise Estratégica</div>
     <div class="r-card">
       <div class="r-card-head">
         <div class="r-icon">🔭</div>
-        <div><div class="r-title">Pontos Fortes e Pontos Cegos</div><div class="r-sub">Leitura de marca baseada no perfil inferido</div></div>
+        <div><div class="r-title">Forças, Gaps e Oportunidades</div><div class="r-sub">Leitura estratégica baseada no perfil inferido</div></div>
       </div>
       <div class="insights-grid">
         <div class="insight-box">
-          <h4>✅ Pontos Fortes</h4>
-          <p>Posicionamento diferenciado (alquimia + hipnoterapia é único). Arquétipo de marca forte (Hermes). Acompanhamento exclusivo como proposta de alto valor. Vínculo emocional profundo com o cliente.</p>
+          <h4>✦ Pontos Fortes</h4>
+          <p>Posicionamento único (alquimia + hipnoterapia). Arquétipo de marca poderoso (Hermes = guia + mensageiro). Acompanhamento exclusivo como diferencial de alto valor. Parceria Diego &amp; Aline cria profundidade e complementaridade.</p>
         </div>
         <div class="insight-box">
-          <h4>⚠️ Pontos Cegos</h4>
-          <p>Baixa prova social pública. Audiência ainda pequena (169). Nicho espiritual tem alta desconfiança — falta âncora de resultado concreto. Ausência de posicionamento de urgência na comunicação.</p>
+          <h4>◈ Pontos Cegos</h4>
+          <p>Prova social pública ainda fraca. Nicho espiritual tem alta desconfiança — falta âncora de resultado concreto. Ausência de urgência na comunicação. "Nova versão" é genérico sem especificar a dor.</p>
         </div>
         <div class="insight-box">
-          <h4>🚀 Oportunidades</h4>
-          <p>Depoimentos de clientes transformados são ouro nesse nicho. Reels com a história de Diego & Aline podem viralizar. Parceria ou sinergia com marcas de hipnoterapia complementares.</p>
+          <h4>→ Oportunidades</h4>
+          <p>Depoimentos de clientes transformados são ouro nesse nicho. Reels com a história real de Diego &amp; Aline podem viralizar. Conteúdo sobre hermetismo + ciência (alquimia moderna) — oceano azul no Brasil.</p>
         </div>
         <div class="insight-box">
           <h4>⚡ Ameaças</h4>
-          <p>Nicho espiritual tem muita concorrência de baixo custo. Algoritmo do Instagram não favorece conteúdo muito genérico. Sem diferenciação clara de resultado, o cliente compara preços.</p>
+          <p>Nicho espiritual tem muito ruído e baixo credenciamento. Algoritmo desfavorece conteúdo místico genérico. Sem diferenciação de resultado, o cliente compara apenas pelo preço.</p>
         </div>
       </div>
     </div>
 
-    <!-- BIO ANÁLISE -->
+    <!-- BIO -->
     <div class="r-card">
       <div class="r-card-head">
-        <div class="r-icon">📝</div>
-        <div><div class="r-title">Análise da Bio</div><div class="r-sub">O que cada elemento comunica</div></div>
+        <div class="r-icon">📜</div>
+        <div><div class="r-title">Análise da Bio</div><div class="r-sub">O que cada elemento comunica estrategicamente</div></div>
       </div>
-      <div style="font-size:0.82rem; line-height:1.8; color:var(--muted);">
-        <p style="background:var(--surface);padding:12px 16px;border-radius:8px;margin-bottom:14px;color:var(--text);font-style:italic;">
-          "💠 Hipnoterapia + Alquimia + Espiritualidade<br>
-          🤝 Acompanhamento Exclusivo com Diego & Aline<br>
-          O caminho para sua nova versão começa agora.<br>
-          👇 Saiba mais"
-        </p>
-        <p><strong style="color:var(--primary)">💠 Hipnoterapia + Alquimia + Espiritualidade</strong> — Três mundos em um. Funciona como filtro de público: quem não está aberto ao espiritual não entra. Quem está, sente um "essa marca me entende". Risco: pode afastar quem precisa de hipnoterapia clínica mas tem resistência ao místico.</p>
-        <br>
-        <p><strong style="color:var(--primary)">🤝 Acompanhamento Exclusivo com Diego & Aline</strong> — "Exclusivo" é uma palavra de alto valor. A dupla sugere maior profundidade e complementaridade. Ponto de diferenciação real.</p>
-        <br>
-        <p><strong style="color:var(--primary)">O caminho para sua nova versão começa agora.</strong> — CTA emocional com senso de início. Fraco em especificidade (nova versão de quê?). Funcionaria melhor com uma dor concreta antes da promessa.</p>
+      <div class="bio-quote">
+        💠 Hipnoterapia + Alquimia + Espiritualidade<br>
+        🤝 Acompanhamento Exclusivo com Diego &amp; Aline<br>
+        O caminho para sua nova versão começa agora.<br>
+        👇 Saiba mais
+      </div>
+      <div class="bio-analysis">
+        <p><strong>💠 "Hipnoterapia + Alquimia + Espiritualidade"</strong> — Três mundos em um. Funciona como filtro de público: quem não está aberto ao espiritual não entra. Quem está, sente "essa marca me entende". Risco: pode afastar quem precisa de hipnoterapia clínica mas tem resistência ao místico.</p>
+        <p><strong>🤝 "Acompanhamento Exclusivo com Diego &amp; Aline"</strong> — "Exclusivo" é palavra de alto valor percebido. A dupla sugere maior profundidade e complementaridade. Ponto de diferenciação real e genuíno.</p>
+        <p><strong>"O caminho para sua nova versão começa agora."</strong> — CTA emocional com senso de início. Fraco em especificidade. Funcionaria melhor com uma dor concreta antes da promessa de transformação.</p>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-card">
-      <p class="cta-eyebrow">Análise concluída</p>
-      <h2>Perfil de <em>@olegadodehermes</em><br>mapeado.</h2>
-      <p>Este perfil foi criado por análise de presença digital pelo Instituto Diego Moreira. Para um perfil comportamental completo respondido pelo próprio Diego & Aline, acesse o diagnóstico completo.</p>
-      <a class="btn-accent" onclick="window.print()">Salvar como PDF</a>
+      <p class="eyebrow">◈ Análise Concluída ◈</p>
+      <h2>O Legado de<br><em>Hermes</em> mapeado.</h2>
+      <p>Este perfil foi criado por análise de presença digital. Para um diagnóstico comportamental respondido diretamente por Diego &amp; Aline, acesse o perfil completo com o questionário.</p>
+      <button class="btn-gold" onclick="window.print()">Salvar como PDF</button>
     </div>
 
-  </div><!-- /container -->
-</div><!-- /main -->
+  </div>
+</div>
 
 </body>
 </html>
